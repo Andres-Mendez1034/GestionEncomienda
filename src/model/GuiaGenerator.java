@@ -3,9 +3,11 @@ package model;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class GuiaGenerator {
+    
     private static final AtomicLong counter = new AtomicLong(System.currentTimeMillis());
 
+    // Método estático para generar un número de guía único
     public static String generarNumero() {
-        return "GUIA" + counter.getAndIncrement();
+        return "GUIA" + counter.getAndIncrement();  // Genera un número de guía único y lo incrementa
     }
 }

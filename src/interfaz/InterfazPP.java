@@ -16,14 +16,14 @@ public class InterfazPP {
         this.encomiendaInterfaz = new EncomiendaInterfaz();
         this.remitenteInterfaz = new RemitenteInterfaz();
         this.empleadoInterfaz = new EmpleadoInterfaz();
-        this.notificacionInterfaz = new NotificacionInterfaz(); // nuevo menú
+        this.notificacionInterfaz = new NotificacionInterfaz(); 
         this.scanner = new Scanner(System.in);
     }
 
     public void iniciar() {
         int opcion = 0;
 
-        while (opcion != 5) { // ahora hay 5 opciones
+        while (opcion != 5) { 
             System.out.println("\n*** Menú Principal ***");
             System.out.println("1. Gestión de Encomiendas");
             System.out.println("2. Gestión de Remitentes");
@@ -46,7 +46,7 @@ public class InterfazPP {
                     empleadoInterfaz.mostrarMenu();
                     break;
                 case 4:
-                    notificacionInterfaz.mostrarMenu(); // acceso al menú de notificaciones
+                    notificacionInterfaz.mostrarMenu(); 
                     break;
                 case 5:
                     System.out.println("Saliendo...");

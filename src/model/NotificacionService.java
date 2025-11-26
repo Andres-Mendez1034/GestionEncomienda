@@ -6,13 +6,14 @@ import java.util.List;
 
 public class NotificacionService {
 
-    private final NotificacionDAO notificacionDAO;
-    private static NotificacionService instance;
+    private final NotificacionDAO notificacionDAO;  // DAO para gestionar notificaciones
+    private static NotificacionService instance;    // Instancia única (Singleton)
 
     private NotificacionService() {
-        this.notificacionDAO = new NotificacionDAOImpl();
+        this.notificacionDAO = new NotificacionDAOImpl();  // Inicializa el DAO
     }
 
+    // Obtiene la instancia única del servicio
     public static NotificacionService getInstance() {
         if (instance == null) {
             instance = new NotificacionService();
@@ -20,29 +21,23 @@ public class NotificacionService {
         return instance;
     }
 
-    /**
-     * Crear una nueva notificación (pasada desde el Controller).
-     */
+    // Crea una nueva notificación
     public void crearNotificacion(NotificacionDTO n) {
         notificacionDAO.crear(n);
     }
 
-    /**
-     * Obtiene todas las notificaciones por número de guía.
-     */
+    // Obtiene notificaciones por número de guía
     public List<NotificacionDTO> obtenerPorGuia(String numeroGuia) {
         return notificacionDAO.obtenerPorGuia(numeroGuia);
     }
 
-    /**
-     * Obtiene todas las notificaciones registradas.
-     */
+    // Obtiene todas las notificaciones
     public List<NotificacionDTO> obtenerTodas() {
         return notificacionDAO.obtenerTodas();
     }
 
-public void agregarNotificacion(NotificacionDTO notificacion) {
-    notificacionDAO.crear(notificacion);
-}
-
+    // Agrega una notificación
+    public void agregarNotificacion(NotificacionDTO notificacion) {
+        notificacionDAO.crear(notificacion);
+    }
 }

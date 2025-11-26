@@ -2,12 +2,12 @@ package model;
 
 public class NotificacionDTO {
 
-    private int id;
-    private String mensaje;
-    private String tipo;
-    private int encomiendaId;
-    private String numeroGuia;
-    private String fecha;
+    private int id;                  // ID de la notificación
+    private String mensaje;          // Mensaje de la notificación
+    private String tipo;             // Tipo de notificación (por ejemplo, "Despacho")
+    private int encomiendaId;        // ID de la encomienda asociada
+    private String numeroGuia;       // Número de guía asociado
+    private String fecha;            // Fecha de la notificación
 
     // Constructor COMPLETO (para BD)
     public NotificacionDTO(int id, String mensaje, String tipo, int encomiendaId, String numeroGuia, String fecha) {
@@ -25,18 +25,18 @@ public class NotificacionDTO {
         this.tipo = tipo;
         this.numeroGuia = numeroGuia;
 
-        // valores por defecto
+        // Valores por defecto
         this.id = 0;
         this.encomiendaId = 0;
         this.fecha = null;
     }
 
-    // Método enviar (si lo usas en Service)
+    // Método para simular el envío de la notificación
     public void enviar(String texto) {
-        System.out.println("[NOTIFICACIÓN] " + texto);
+        System.out.println("[NOTIFICACIÓN] " + texto);  // Imprime el mensaje de la notificación
     }
 
-    // getters
+    // Getters
     public int getId() { return id; }
     public String getMensaje() { return mensaje; }
     public String getTipo() { return tipo; }
